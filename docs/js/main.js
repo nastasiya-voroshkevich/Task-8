@@ -102,8 +102,8 @@ button.onclick = function () {
     this.classList.remove("invalid");
     error2.innerHTML = "";
   }
-  if (!passwordReseat.value) {
-    passwordReset.classList.add("invalid");
+  if (!passwordRepeat.value) {
+    passwordRepeat.classList.add("invalid");
     error4.innerHTML = "Пожалуйста, введите пароль";
   } else if (this.classList.contains("invalid")) {
     this.classList.remove("invalid");
@@ -124,12 +124,7 @@ button.onclick = function () {
   info.myName = myName.value;
   info.password = password.value;
   info.surname = surname.value;
-  if (
-    email.value.includes("@") &&
-    myName.value &&
-    password.value &&
-    check.checked
-  ) {
+  if ( email.value.includes("@") &&  myName.value && password.value && check.checked ) {
     console.log(info);
   }
 };
