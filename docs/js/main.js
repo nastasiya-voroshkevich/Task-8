@@ -82,15 +82,15 @@ form.addEventListener("submit", (e) => {
   if (!email.value.includes("@")) {
     email.classList.add("invalid");
     error.innerHTML = "Пожалуйста, введите правильный email.";
-  } 
+  }
   if (!myName.value) {
     myName.classList.add("invalid");
     error1.innerHTML = "Пожалуйста, введите имя";
-  } 
+  }
   if (!password.value) {
     password.classList.add("invalid");
     error2.innerHTML = "Пожалуйста, введите пароль";
-  } 
+  }
   if (!password_repeat.value) {
     password_repeat.classList.add("invalid");
     error4.innerHTML = "Пожалуйста, введите пароль";
@@ -99,7 +99,7 @@ form.addEventListener("submit", (e) => {
     check.classList.add("invalid");
     text.style.color = "red";
     error3.innerHTML = "Пожалуйста, cогласитесь";
-  } 
+  }
 
   let info = {};
   info.city = city.value;
@@ -107,9 +107,14 @@ form.addEventListener("submit", (e) => {
   info.myName = myName.value;
   info.password = password.value;
   info.surname = surname.value;
-  if ( email.value.includes("@") && myName.value && password.value && check.checked) {
+  if (
+    email.value.includes("@") &&
+    myName.value &&
+    password.value &&
+    check.checked
+  ) {
     console.log(info);
-  } 
+  }
   e.preventDefault();
 });
 
