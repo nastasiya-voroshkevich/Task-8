@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" name="myForm">
+      <div class="forms">
+        <label>
+          Имя <span>*</span>
+          <input type="text" name="myname" />
+          <div id="error1"></div>
+        </label>
+
+        <label>
+          Фамилия
+          <input type="text" name="surname" />
+        </label>
+
+        <label>
+          Email <span>*</span>
+          <input type="text" name="email" id="input" />
+          <div id="error"></div>
+        </label>
+      </div>
+      <div class="forms">
+        <label>
+          Город
+          <input type="text" name="city" />
+        </label>
+
+        <label>
+          Пароль <span>*</span>
+          <input type="text" name="password" />
+          <div id="error2"></div>
+        </label>
+        <label>
+          Повтор пароля
+          <input type="text" name="password_repeat" />
+        </label>
+      </div>
+      <label id="text">
+        <input type="checkbox" name="check" />
+        Соглашаюсь с правилами сайта
+        <div id="error3"></div>
+      </label>
+
+      <div class="btn">
+        <button type="submit" class="btn-1" id="button" tabindex="0">
+          Сохранить
+        </button>
+        <button type="reset" id="button1">Очистить</button>
+      </div>
+    </form>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
