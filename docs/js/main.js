@@ -4,10 +4,13 @@ let surname = form.elements.surname;
 let email = form.elements.email;
 let city = form.elements.city;
 let password = form.elements.password;
-let check = form.elements.check;
 let error = document.getElementById("error");
 let error1 = document.getElementById("error1");
 let error2 = document.getElementById("error2");
+let error1 = document.getElementById("error3");
+let error1 = document.getElementById("error4");
+let password_repeat = form.elements.password_repeat;
+let check = form.elements.check;
 let text = document.querySelector("#text");
 
 email.onblur = function () {
@@ -48,6 +51,18 @@ password.onfocus = function () {
     error2.innerHTML = "";
   }
 };
+password_repeat.onblur = function () {
+  if (!password_repeat.value) {
+    password_repeat.classList.add("invalid");
+    error4.innerHTML = "Пожалуйста, введите пароль";
+  }
+};
+password_repeat.onfocus = function () {
+  if (this.classList.contains("invalid")) {
+    this.classList.remove("invalid");
+    error4.innerHTML = "";
+  }
+};
 
 check.onblur = function () {
   if (!check.checked) {
@@ -64,41 +79,27 @@ check.onfocus = function () {
   }
 };
 form.addEventListener("submit", (e) => {
-  e.preventDefault();
-});
-
-button.onclick = function () {
   if (!email.value.includes("@")) {
     email.classList.add("invalid");
     error.innerHTML = "Пожалуйста, введите правильный email.";
-  } else if (this.classList.contains("invalid")) {
-    this.classList.remove("invalid");
-    error.innerHTML = "";
-  }
+  } 
   if (!myName.value) {
     myName.classList.add("invalid");
     error1.innerHTML = "Пожалуйста, введите имя";
-  } else if (myName.value) {
-    this.classList.remove("invalid");
-    error1.innerHTML = "";
-  }
-
+  } 
   if (!password.value) {
     password.classList.add("invalid");
     error2.innerHTML = "Пожалуйста, введите пароль";
-  } else if (this.classList.contains("invalid")) {
-    this.classList.remove("invalid");
-    error2.innerHTML = "";
+  } 
+  if (!password_repeat.value) {
+    password_repeat.classList.add("invalid");
+    error4.innerHTML = "Пожалуйста, введите пароль";
   }
   if (!check.checked) {
     check.classList.add("invalid");
     text.style.color = "red";
     error3.innerHTML = "Пожалуйста, cогласитесь";
-  } else if (this.classList.contains("invalid")) {
-    this.classList.remove("invalid");
-    text.style.color = "black";
-    error3.innerHTML = " ";
-  }
+  } 
 
   let info = {};
   info.city = city.value;
@@ -106,11 +107,11 @@ button.onclick = function () {
   info.myName = myName.value;
   info.password = password.value;
   info.surname = surname.value;
-  if ( email.value.includes("@") && myName.value && password.value && check.checked ) {
+  if ( email.value.includes("@") && myName.value && password.value && check.checked) {
     console.log(info);
-  } else if ( !email.value.includes("@") && !myName.value && !password.value && !check.checked) {
-  }
-};
+  } 
+  e.preventDefault();
+});
 
 let button1 = document.getElementById("button1");
 button1.onclick = function () {
@@ -123,4 +124,6 @@ button1.onclick = function () {
   error1.innerHTML = "";
   password.classList.remove("invalid");
   error2.innerHTML = "";
+  password_repeat.classList.remove("invalid");
+  error4.innerHTML = "";
 };
