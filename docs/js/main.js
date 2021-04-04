@@ -81,7 +81,7 @@ check.onfocus = function () {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 });
-button.onclick = function () {
+button.addEventListener('click', function () {
   if (!email.value.includes("@")) {
     email.classList.add("invalid");
     error.innerHTML = "Пожалуйста, введите правильный email.";
@@ -119,9 +119,9 @@ button.onclick = function () {
   ) {
     console.log(info);
   }
-};
+});
 let button1 = document.getElementById("button1");
-button1.onclick = function () {
+button1.addEventListener('click', function () {
   check.classList.remove("invalid");
   error3.innerHTML = "";
   text.style.color = "black";
@@ -133,4 +133,4 @@ button1.onclick = function () {
   error2.innerHTML = "";
   passwordRepeat.classList.remove("invalid");
   error4.innerHTML = "";
-};
+});
