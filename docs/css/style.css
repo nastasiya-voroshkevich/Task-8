@@ -35,6 +35,7 @@ span {
 .invalid {
   background-image: url(../img/exclamation-mark-inside-a-circle-svgrepo-com.svg);
   background-repeat: no-repeat;
+  background-position: right;
  
   border: 1px solid red;
 }
