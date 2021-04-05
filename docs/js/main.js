@@ -53,7 +53,7 @@ password.onfocus = function () {
 };
 
 passwordRepeat.onblur = function () {
-  if (!passwordRepeat.value || password.value != passwordRepeat.value ) {
+  if (!passwordRepeat.value  ) {
     passwordRepeat.classList.add("invalid");
     error4.innerHTML = "Пожалуйста, введите пароль";
   }
@@ -68,7 +68,7 @@ check.onblur = function () {
   if (!check.checked) {
     check.classList.add("invalid");
     text.style.color = "red";
-    error3.innerHTML = "Пожалуйста, введите пароль";
+    error3.innerHTML = "Пожалуйста, cогласитесь";
   }
 };
 check.onfocus = function () {
@@ -91,11 +91,11 @@ button.addEventListener('click', function () {
     error1.innerHTML = "Пожалуйста, введите имя";
   }
 
-  if (!password.value) {
+  if (!password.value ) {
     password.classList.add("invalid");
     error2.innerHTML = "Пожалуйста, введите пароль";
   } 
-  if (!passwordRepeat.value ) {
+  if (!passwordRepeat.value || password.value != passwordRepeat.value) {
     passwordRepeat.classList.add("invalid");
     error4.innerHTML = "Пожалуйста, введите пароль";
   } 
